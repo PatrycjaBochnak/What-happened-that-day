@@ -1,0 +1,20 @@
+{
+  "name": "what-happened-that-day-",
+  "version": "1.0.0",
+  "description": "Website where you can check what happened on a given day in the past",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatrycjaBochnak/What-happened-that-day-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PatrycjaBochnak/What-happened-that-day-/issues"
+  },
+  "homepage": "https://github.com/PatrycjaBochnak/What-happened-that-day-#readme"
+}
