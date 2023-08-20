@@ -16,7 +16,7 @@ const Nav = () => {
   ));
   return (
     <nav className="main">
-      <ul>{menu}</ul>
+      <ul className="menu">{menu}</ul>
     </nav>
   );
 };

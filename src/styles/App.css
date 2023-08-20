@@ -1,4 +1,13 @@
-div.app {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+
+.App {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -9,14 +18,19 @@ div.app {
 
 main {
   display: flex;
-  flex-grow: 1;
-  padding: 30px 0;
+  flex-direction: column;
 }
 aside {
+  background-color: lightgray;
+  padding: 10px;
+  text-align: center;
   min-width: 240px;
 }
-section.page {
-  flex-grow: 0;
+section {
+  background-color: aliceblue;
+  padding: 20px;
+  text-align: center;
+  flex-grow: 1;
 }
 footer {
   background-color: black;
@@ -24,7 +38,4 @@ footer {
   padding: 10px 0;
   text-align: center;
   text-transform: uppercase;
-}
-section {
-  width: 100% auto;
 }

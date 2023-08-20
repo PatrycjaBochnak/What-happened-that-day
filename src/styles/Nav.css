@@ -16,21 +16,9 @@ nav.main a {
 }
 
 nav.main a:hover { 
-    transform: translateX(20px);
+    transform: translateY(10px);
 }
-nav.main a.active { 
-    border-left: 10px black solid;
-    transform: translateX(0px);
-}
-nav.main li:nth-child(1) a.active { 
-    border-left-color: green;
-}
-nav.main li:nth-child(2) a.active { 
-    border-left-color: blue;
-}
-nav.main li:nth-child(3) a.active { 
-    border-left-color: yellow;
-}
-nav.main li:nth-child(4) a.active { 
-    border-left-color: red;
+.menu {
+    display: flex;
+    justify-content: space-evenly;
 }
