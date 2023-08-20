@@ -1,0 +1,30 @@
+div.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 90%;
+  margin: 0 auto;
+  color: #222;
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  padding: 30px 0;
+}
+aside {
+  min-width: 240px;
+}
+section.page {
+  flex-grow: 0;
+}
+footer {
+  background-color: black;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+section {
+  width: 100% auto;
+}
