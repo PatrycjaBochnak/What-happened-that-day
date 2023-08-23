@@ -1,29 +1,29 @@
 .navbar {
-    position: fixed; /* Dodaj to */
-    top: 0; /* Dodaj to */
-    width: 100%; /* Dodaj to */
-    background-color: rgba(0, 0, 0, 0.5); /* Przykładowy kolor tła */
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px;
-    z-index: 1000; /* Dodaj to, aby Navbar był na wierzchu treści */
+  position: fixed; /* Dodaj to */
+  top: 0; /* Dodaj to */
+  width: 100%; /* Dodaj to */
+  background-color: rgba(0, 0, 0, 0.5); /* Przykładowy kolor tła */
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  z-index: 1000; /* Dodaj to, aby Navbar był na wierzchu treści */
 }
 
 .nav-items {
-    display: flex;
-    justify-content: space-between;
-    width: 30%;
-    margin-right: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  margin-right: 50px;
 }
 .button {
-    color: white;
-    font-size: 15px;
-    font-weight: 600;
-    transition: all .55s ease;
-    border-bottom: 2px solid transparent;
-    transition: all .55s ease;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.55s ease;
+  border-bottom: 2px solid transparent;
+  transition: all 0.55s ease;
 }
 .button:hover {
-    cursor: pointer;
-    border-bottom: 2px solid white;
+  cursor: pointer;
+  border-bottom: 2px solid white;
 }

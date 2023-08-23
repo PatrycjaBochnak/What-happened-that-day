@@ -1,6 +1,6 @@
 import React from "react";
 import ButtonsMenu from "./ButtonsMenu";
-import '../styles/Nav.css';
+import "../styles/Nav.css";
 
 const Nav = () => (
   <div className="navbar">

@@ -1,13 +1,15 @@
 import React from "react";
-import '../styles/Footer.css';
+import "../styles/Footer.css";
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear();
-  return <footer className="footer">
-    <div className="copyright">
+  const currentYear = new Date().getFullYear();
+  return (
+    <footer className="footer">
+      <div className="copyright">
         &copy; {currentYear} Patrycja Bochnak. All right reserved.
-    </div>
-  </footer>;
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

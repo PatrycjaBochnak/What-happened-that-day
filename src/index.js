@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './layouts/App';
-import ScrollReveal from 'scrollreveal';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./layouts/App";
+import ScrollReveal from "scrollreveal";
 
 const sr = ScrollReveal({
   distance: "65px",
@@ -10,7 +10,7 @@ const sr = ScrollReveal({
   reset: true,
 });
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App sr={sr} />

@@ -1,5 +1,13 @@
 .events {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+  font-family: "Sriracha";
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.events-text {
+  font-family: "Poppins";
+  color: white;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
