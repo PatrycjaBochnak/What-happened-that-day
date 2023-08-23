@@ -2,12 +2,13 @@
   font-family: "Sriracha";
   display: flex;
   flex-flow: column;
+  justify-content: center;
   align-items: center;
 }
-.events-text {
-  font-family: "Poppins";
-  color: white;
+.events-content {
   display: flex;
   flex-flow: column;
+  color: white;
+  font-family: "Sriracha";
   align-items: center;
 }

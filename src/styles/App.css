@@ -14,10 +14,11 @@ body {
   min-height: 100vh;
   background: linear-gradient(
     245.59deg,
-    #4d9559 0%,
-    #38703d 28.53%,
-    #133917 75.52%
+    #6a99c9 0%,
+    #4d79a1 28.53%,
+    #2b405e 75.52%
   );
+
 }
 .App {
   display: flex;
@@ -70,7 +71,7 @@ body {
 .page-img {
   width: 20%;
   height: auto;
-  margin-top: 150px;
+  margin-top: 190px;
   margin-left: -170px;
 }
 .contact,

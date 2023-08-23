@@ -1,11 +1,11 @@
 .contact {
-  margin-top: 300px;
   font-family: "Sriracha", cursive;
   display: flex;
   flex-flow: column;
   align-items: center;
 }
 .social-media-icons {
+  text-decoration: none;
   color: white;
   display: flex;
   flex-flow: row;
