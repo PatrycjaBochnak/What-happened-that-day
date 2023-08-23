@@ -15,11 +15,17 @@ function Searcher() {
   async function fetchHistoricalEvent(day, month) {
     const wikiEndpoint = "https://en.wikipedia.org/w/api.php";
 
+    const monthNames = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+
+    const monthIndex = month - 1;
+  
+    const monthName = monthNames[monthIndex];
+
     const wikiParams = queryString.stringify({
       origin: "*",
       format: "json",
       action: "query",
-      titles: `${month}_${day}`,
+      titles: `${monthName}_${day}`,
     });
 
     const wikiLink = `${wikiEndpoint}?${wikiParams}`;

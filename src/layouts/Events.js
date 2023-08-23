@@ -28,7 +28,6 @@ const Events = ({ sr }) => {
         <div className="events-text"> Events from the past </div>
       </div>
       <div className="events-content">
-        Current date: {day}-{month}-{year}
         <br/>
         Events:
         <Searcher />
