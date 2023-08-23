@@ -1,24 +1,15 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import ButtonsMenu from "./ButtonsMenu";
 import '../styles/Nav.css';
 
-const list = [
-  { name: "Start", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Contact", path: "/contact" },
-];
-
-const Nav = () => {
-  const menu = list.map((item) => (
-    <li key={item.name}>
-      <NavLink to={item.path}>{item.name}</NavLink>
-    </li>
-  ));
-  return (
-    <nav className="main">
-      <ul className="menu">{menu}</ul>
-    </nav>
-  );
-};
+const Nav = () => (
+  <div className="navbar">
+    <div className="nav-items">
+      <ButtonsMenu source="page" linkName="Start" />
+      <ButtonsMenu source="events" linkName="Check events" />
+      <ButtonsMenu source="contact" linkName="Contact" />
+    </div>
+  </div>
+);
 
 export default Nav;
