@@ -5,6 +5,7 @@ import "../styles/App.css";
 
 function Searcher() {
   const [historicalEvents, setHistoricalEvents] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [currentDate] = useState(new Date());
 
   async function getJsonResponse(url, config) {
@@ -49,31 +50,34 @@ function Searcher() {
       const month = currentDate.getMonth() + 1;
       const currentYear = currentDate.getFullYear();
 
+      const eventsToAdd = [];
+
       for (let year = currentYear - 1; year >= 1950; year--) {
         const wikiData = await fetchHistoricalEvent(day, month);
 
         if (wikiData && wikiData.query && wikiData.query.pages) {
           const pages = wikiData.query.pages;
-          const events = Object.values(pages);
 
-          if (events.length > 0) {
-            const formattedEvents = events.map((event) => {
-              const eventDate = new Date(event.title);
-              const options = { day: "numeric", month: "long" };
-              const formattedDate = eventDate.toLocaleDateString("en-US", options);
+          for (const pageId in pages) {
+            const event = pages[pageId];
+            const eventDate = new Date(event.title);
+            const options = { day: "numeric", month: "long" };
+            const formattedDate = eventDate.toLocaleDateString("en-US", options);
 
-              return (
-                <div key={event.pageid} className="event">
-                  <h3 className="event-title">{formattedDate}</h3>
-                  <div className="event-content" dangerouslySetInnerHTML={{ __html: event.extract }} />
-                </div>
-              );
-            });
+            const formattedEvent = (
+              <div key={event.pageid} className="event">
+                <h3 className="event-title">{formattedDate}</h3>
+                <div className="event-content" dangerouslySetInnerHTML={{ __html: event.extract }} />
+              </div>
+            );
 
-            setHistoricalEvents((prevEvents) => [...prevEvents, ...formattedEvents]);
+            eventsToAdd.push(formattedEvent);
           }
         }
       }
+
+      setHistoricalEvents(eventsToAdd);
+      setIsLoading(false);
     }
 
     getHistoricalEvents();
@@ -83,7 +87,7 @@ function Searcher() {
     <div className="searcher">
       <h1>Historical Events</h1>
       <div className="event-list">
-        {historicalEvents.length > 0 ? historicalEvents : <p>Loading...</p>}
+        {isLoading ? <p>Loading...</p> : historicalEvents}
       </div>
     </div>
   );

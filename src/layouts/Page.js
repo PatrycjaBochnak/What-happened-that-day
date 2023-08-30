@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "../styles/App.css";
-import cat from "../images/cat.jpeg";
 import Events from "./Events";
 import Contact from "./Contact";
 
@@ -27,7 +26,6 @@ const Page = ({ sr }) => {
             convenience of modern technology.
           </p>
         </div>
-        <img className="page-img" src={cat} alt="shrek-cat" />
       </div>
       <Events sr={sr} />
       <Contact id="contact" sr={sr} />
