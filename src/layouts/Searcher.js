@@ -14,29 +14,21 @@ function Searcher() {
   }
 
   async function fetchHistoricalEvent(day, month) {
-    const wikiEndpoint = "https://en.wikipedia.org/w/api.php";
-
-    const monthNames = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
-
     const monthIndex = month - 1;
-  
-    const monthName = monthNames[monthIndex];
 
-    const wikiParams = queryString.stringify({
-      origin: "*",
-      format: "json",
-      action: "query",
-      titles: `${monthName}_${day}`,
-    });
-
-    const wikiLink = `${wikiEndpoint}?${wikiParams}`;
+    const wikiEndpoint =
+      "https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/events/" +
+      monthIndex +
+      "/" +
+      day;
 
     const wikiConfig = {
       timeout: 6500,
     };
 
     try {
-      const result = await getJsonResponse(wikiLink, wikiConfig);
+      const result = await getJsonResponse(wikiEndpoint, wikiConfig);
+      console.log(result);
       return result;
     } catch (error) {
       console.log("Error: " + error);
@@ -48,34 +40,31 @@ function Searcher() {
     async function getHistoricalEvents() {
       const day = currentDate.getDate();
       const month = currentDate.getMonth() + 1;
-      const currentYear = currentDate.getFullYear();
 
       const eventsToAdd = [];
 
-      for (let year = currentYear - 1; year >= 1950; year--) {
-        const wikiData = await fetchHistoricalEvent(day, month);
+      const wikiData = await fetchHistoricalEvent(day, month);
+      if (wikiData && wikiData.events) {
+        const events = wikiData.events;
 
-        if (wikiData && wikiData.query && wikiData.query.pages) {
-          const pages = wikiData.query.pages;
+        for (const event of events) {
+            if ( event.year > 2000 ) {
 
-          for (const pageId in pages) {
-            const event = pages[pageId];
-            const eventDate = new Date(event.title);
-            const options = { day: "numeric", month: "long" };
-            const formattedDate = eventDate.toLocaleDateString("en-US", options);
 
-            const formattedEvent = (
-              <div key={event.pageid} className="event">
-                <h3 className="event-title">{formattedDate}</h3>
-                <div className="event-content" dangerouslySetInnerHTML={{ __html: event.extract }} />
-              </div>
-            );
+          const formattedEvent = (
+            <div key={event.pageid} className="event">
+              <div
+                className="event-content"
+              >
+             <p>{event.text}</p>
+                </div>
+            </div>
+          );
 
-            eventsToAdd.push(formattedEvent);
-          }
+          eventsToAdd.push(formattedEvent);
         }
+    }
       }
-
       setHistoricalEvents(eventsToAdd);
       setIsLoading(false);
     }
