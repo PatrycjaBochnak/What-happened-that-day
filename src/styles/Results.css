@@ -1,0 +1,27 @@
+.results-title {
+    display: flex;
+  justify-content: center;
+    width: 100%;
+
+}
+
+.results-table {
+    margin: 30px 150px 30px 150px;
+    border: 2px solid black;
+}
+
+.results-list { 
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.event {
+    display:flex ;
+    margin: 0 100px 0 100px;
+    word-wrap: break-word;
+    border: 5px solid rgba(255, 255, 255, 0); 
+}
+.event-content {
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+}

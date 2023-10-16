@@ -29,7 +29,6 @@ const Events = ({ sr }) => {
       </div>
       <div className="events-content">
         <br/>
-        Events:
         <Searcher />
       </div>
     </>

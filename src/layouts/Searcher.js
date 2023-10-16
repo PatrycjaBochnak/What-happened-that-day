@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import queryString from "query-string";
 import "../styles/App.css";
+import "../styles/Results.css";
 
 function Searcher() {
+  const currentDate = new Date();
   const [historicalEvents, setHistoricalEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [currentDate] = useState(new Date());
 
   async function getJsonResponse(url, config) {
     const res = await axios.get(url, config);
@@ -15,13 +15,8 @@ function Searcher() {
 
   async function fetchHistoricalEvent(day, month) {
     const monthIndex = month - 1;
-
     const wikiEndpoint =
-      "https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/events/" +
-      monthIndex +
-      "/" +
-      day;
-
+      `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/events/${monthIndex}/${day}`;
     const wikiConfig = {
       timeout: 6500,
     };
@@ -48,22 +43,20 @@ function Searcher() {
         const events = wikiData.events;
 
         for (const event of events) {
-            if ( event.year > 2000 ) {
-
-
-          const formattedEvent = (
-            <div key={event.pageid} className="event">
-              <div
-                className="event-content"
-              >
-             <p>{event.text}</p>
+          if (event.year > 2000) {
+            const formattedEvent = (
+              <div className="event-border">
+              <div key={event.pageid} className="event">
+                <div className="event-content">
+                  <p>{event.text}</p>
                 </div>
-            </div>
-          );
+              </div>
+              </div>
+            );
 
-          eventsToAdd.push(formattedEvent);
+            eventsToAdd.push(formattedEvent);
+          }
         }
-    }
       }
       setHistoricalEvents(eventsToAdd);
       setIsLoading(false);
@@ -71,13 +64,18 @@ function Searcher() {
 
     getHistoricalEvents();
   }, []);
-
   return (
-    <div className="searcher">
-      <h1>Historical Events</h1>
-      <div className="event-list">
-        {isLoading ? <p>Loading...</p> : historicalEvents}
+    <div>
+      <div className="results-title">
+        <h1>Historical Events from {currentDate.toDateString()}</h1>
       </div>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <table className="results-table">
+          <tbody>{historicalEvents}</tbody>
+        </table>
+      )}
     </div>
   );
 }
