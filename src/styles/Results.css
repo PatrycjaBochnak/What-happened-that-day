@@ -7,7 +7,7 @@
 
 .results-table {
     margin: 30px 150px 30px 150px;
-    border: 2px solid black;
+    border: 7px double black;
 }
 
 .results-list { 
@@ -19,7 +19,8 @@
     display:flex ;
     margin: 0 100px 0 100px;
     word-wrap: break-word;
-    border: 5px solid rgba(255, 255, 255, 0); 
+    list-style-type: disc;
+    border: 7px solid rgba(255, 255, 255, 0); 
 }
 .event-content {
     font-size: 14px;
