@@ -25,7 +25,7 @@ const Events = ({ sr }) => {
   return (
     <>
       <div className="events">
-        <div className="events-text"> Events from the past </div>
+  Events from the past 
       </div>
       <div className="events-content">
         <br/>

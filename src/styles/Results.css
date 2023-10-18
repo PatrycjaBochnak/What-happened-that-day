@@ -11,6 +11,7 @@
 }
 
 .results-list { 
+    font-family: "Poppins", sans-serif;
     display: flex;
     flex-flow: column;
     align-items: center;

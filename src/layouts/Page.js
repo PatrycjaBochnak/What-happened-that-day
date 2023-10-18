@@ -27,7 +27,7 @@ const Page = ({ sr }) => {
           </p>
         </div>
       </div>
-      <Events sr={sr} />
+      <Events id="events" sr={sr} />
       <Contact id="contact" sr={sr} />
     </>
   );
