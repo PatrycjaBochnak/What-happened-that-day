@@ -24,12 +24,12 @@ const Events = ({ sr }) => {
 
   return (
     <>
-      <div className="events">
-  Events from the past 
-      </div>
+    <div className="events">
+      <h5>Events from the past</h5>
       <div className="events-content">
-        <br/>
+        <br />
         <Searcher />
+      </div>
       </div>
     </>
   );

@@ -67,7 +67,7 @@ function Searcher() {
   return (
     <div>
       <div className="results-title">
-        <h1>Historical Events from {currentDate.toDateString()}</h1>
+        <h5>Historical Events from {currentDate.toDateString()}</h5>
       </div>
       {isLoading ? (
         <p>Loading...</p>

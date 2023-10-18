@@ -1,12 +1,12 @@
 .navbar {
-  position: fixed; /* Dodaj to */
-  top: 0; /* Dodaj to */
-  width: 100%; /* Dodaj to */
-  background-color: rgba(0, 0, 0, 0.5); /* Przykładowy kolor tła */
+  position: fixed;
+  top: 0; 
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
   display: flex;
   justify-content: flex-end;
   padding: 10px;
-  z-index: 1000; /* Dodaj to, aby Navbar był na wierzchu treści */
+  z-index: 1000; 
 }
 
 .nav-items {
