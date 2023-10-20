@@ -1,17 +1,16 @@
 import React, { useEffect } from "react";
 import "../styles/App.css";
+import "../styles/Page.css"
 import Events from "./Events";
 import Contact from "./Contact";
 
 const Page = ({ sr }) => {
   useEffect(() => {
     sr.reveal(".page-text", { delay: 200, origin: "top" });
-    sr.reveal(".page-img", { delay: 450, origin: "top" });
   }, [sr]);
 
   return (
     <>
-      <div className="logo-text">PAST EVENTS.COM</div>
       <div className="page">
         <div className="page-text">
           <h3>What happened on that day</h3>

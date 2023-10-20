@@ -8,8 +8,6 @@ const Events = ({ sr }) => {
 
   useEffect(() => {
     sr.reveal(".events", { delay: 200, origin: "top" });
-    sr.reveal(".events-content", { delay: 450, origin: "top" });
-
     const date = new Date();
     setCurrentDate(date);
   }, [sr]);

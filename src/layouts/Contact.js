@@ -12,7 +12,6 @@ const Contact = ({ sr }) => {
     <>
       <div className="contact">
         <div className="contact-text">Hit me up!</div>
-      </div>
       <div className="social-media-icons">
         <div className="ig">
           <i className="ri-instagram-line"></i>
@@ -25,6 +24,7 @@ const Contact = ({ sr }) => {
         <div className="portfolio">
           <i className="ri-pass-pending-line"></i>
         </div>
+      </div>
       </div>
     </>
   );
