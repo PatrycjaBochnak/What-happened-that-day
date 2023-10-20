@@ -5,10 +5,10 @@ import Searcher from "./Searcher";
 
 const Events = ({ sr }) => {
   const [currentDate, setCurrentDate] = useState(null);
+  const date = new Date();
 
   useEffect(() => {
     sr.reveal(".events", { delay: 200, origin: "top" });
-    const date = new Date();
     setCurrentDate(date);
   }, [sr]);
 
