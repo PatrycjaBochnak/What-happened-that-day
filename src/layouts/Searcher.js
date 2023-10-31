@@ -72,9 +72,9 @@ function Searcher() {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <table className="results-table">
-          <tbody>{historicalEvents}</tbody>
-        </table>
+        <div className="results-table">
+          {historicalEvents}
+        </div>
       )}
     </div>
   );
