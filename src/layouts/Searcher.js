@@ -14,7 +14,7 @@ function Searcher() {
   }
 
   async function fetchHistoricalEvent(day, month) {
-    const monthIndex = month - 1;
+    const monthIndex = month;
     const wikiEndpoint =
       `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/events/${monthIndex}/${day}`;
     const wikiConfig = {
