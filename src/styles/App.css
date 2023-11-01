@@ -26,3 +26,6 @@ body {
   list-style: none;
   text-decoration: none;
 }
+.Searcher {
+  height: 100vh;
+}

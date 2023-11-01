@@ -8,8 +8,9 @@ const Events = ({ sr }) => {
   const date = new Date();
 
   useEffect(() => {
-    sr.reveal(".events", { delay: 200, origin: "top" });
     setCurrentDate(date);
+    sr.reveal(".", { delay: 200, origin: "top" });
+    sr.reveal(".events-content", { delay: 450, origin: "top" });
   }, [sr]);
 
   if (!currentDate) {
@@ -24,11 +25,11 @@ const Events = ({ sr }) => {
     <>
     <div className="events">
       <h5>Events from the past</h5>
-      <div className="events-content">
+    <div className="events-content">
         <br />
         <Searcher />
-      </div>
-      </div>
+    </div>
+    </div>
     </>
   );
 };

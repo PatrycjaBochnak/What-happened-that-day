@@ -8,7 +8,7 @@ const ButtonsMenu = ({ source, linkName }) => (
     to={source}
     spy={true}
     smooth={true}
-    offset={50}
+    offset={0}
     duration={500}
   >
     {linkName}
