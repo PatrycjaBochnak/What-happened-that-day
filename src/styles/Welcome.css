@@ -1,0 +1,41 @@
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height:100vh;
+  overflow: hidden!important;
+
+  /* height: 100%; */
+  /* margin-bottom: 200px; */
+}
+.welcome-text {
+  width: 40%;
+  display: inline-block;
+}
+.welcome-text h3 {
+  font-family: "Sriracha", cursive;
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+  /* margin-top: 200px; */
+}
+.welcome-text h4 {
+  font-family: "Sriracha";
+  font-size: 30px;
+  font-weight: normal;
+  color: #fff;
+  margin-bottom: 50px;
+}
+.welcome-text p {
+  color: white;
+  font-size: 15px;
+  line-height: 1.9;
+  width: 70%;
+}
+
+.welcome p {
+  text-align: justify;
+  text-justify: inter-word;
+  width: 100%;
+}

@@ -1,16 +1,14 @@
 import React from "react";
 import "../styles/App.css";
-import Footer from "./Footer";
-import Nav from "./Nav";
-import Page from "./Page";
+import { Layout } from "./Layout";
+import Pages from "./Pages";
 
 function App({ sr }) {
   return (
-    <div className="App">
-      <Nav />
-      <Page sr={sr} />
-      <Footer />
-    </div>
+    <Layout>
+      <Pages sr={sr} />
+    </Layout>
   );
-}
+};
+
 export default App;
