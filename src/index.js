@@ -5,9 +5,10 @@ import ScrollReveal from "scrollreveal";
 
 const sr = ScrollReveal({
   distance: "65px",
-  duration: 2600,
-  delay: 450,
+  duration: 1400,
+  delay: 200,
   reset: true,
+  origin: 'top'
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

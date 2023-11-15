@@ -7,8 +7,8 @@ const Events = ({ sr }) => {
   // const [currentDate, setCurrentDate] = useState(null);
 
   useEffect(() => {
-    sr.reveal("#text", { delay: 200, origin: "top" });
-    sr.reveal("#content", { delay: 1650, origin: "top" });
+    sr.reveal("#text");
+    sr.reveal("#content", { delay: 1400 });
 
     // const date = new Date();
     // setCurrentDate(date);
