@@ -8,6 +8,7 @@ const sr = ScrollReveal({
   duration: 2600,
   delay: 450,
   reset: true,
+  origin: 'top'
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
