@@ -7,7 +7,7 @@ function App({ sr }) {
   return (
     <div className="App">
       <Layout>
-      <Page sr={sr} />
+        <Page sr={sr} />
       </Layout>
     </div>
   );

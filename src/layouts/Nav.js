@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonsMenu from "./ButtonsMenu";
+import ButtonsMenu from "../components/ButtonsMenu";
 import "../styles/Nav.css";
 
 const Nav = () => (

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./layouts/App";
+import App from "./components/App";
 import ScrollReveal from "scrollreveal";
 
 const sr = ScrollReveal({
@@ -8,7 +8,7 @@ const sr = ScrollReveal({
   duration: 2600,
   delay: 450,
   reset: true,
-  origin: 'top'
+  origin: "top",
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
