@@ -16,8 +16,10 @@ const Contact = ({ sr }) => {
 
         <div id="content" className="social-media-icons">
           <div className="ig">
+          <a href="https://www.instagram.com/patrycjabochnak/" target="_blank" rel="noopener noreferrer">
             {/* <i className="ri-instagram-line"></i> */}
             <Icons.Instagram />
+          </a>
           </div>
           <div className="linkedin">
             <a href="https://www.linkedin.com/in/patrycja-bochnak-779a931a7/" target="_blank" rel="noopener noreferrer">
@@ -26,8 +28,10 @@ const Contact = ({ sr }) => {
             </a>
           </div>
           <div className="portfolio">
+          <a href="https://github.com/PatrycjaBochnak/" target="_blank" rel="noopener noreferrer">
             {/* <i className="ri-pass-pending-line"></i> */}
             <Icons.Github />
+            </a>
           </div>
         </div>
       </div>
