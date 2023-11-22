@@ -4,8 +4,8 @@ import React, { useEffect } from "react";
 export const Welcome = ({sr}) => {
 
   useEffect(() => {
-    sr.reveal("#text");
-    sr.reveal("#content", { delay: 1400});
+    sr.reveal("#text", { origin: "top"});
+    sr.reveal("#content", { delay: 1400, origin: "bottom"});
   }, [sr]);
 
   return(
