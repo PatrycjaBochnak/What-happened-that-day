@@ -1,15 +1,15 @@
 import "../styles/Welcome.css"
 import React, { useEffect } from "react";
 
-export const Welcome = ({sr}) => {
+export const Welcome = ({scrlInfo}) => {
 
   useEffect(() => {
-    sr.reveal("#text");
-    sr.reveal("#content", { delay: 1400});
-  }, [sr]);
+    scrlInfo.sr.reveal("#welcome #text");
+    scrlInfo.sr.reveal("#welcome #content", { delay: scrlInfo.delay+300, origin: 'bottom' });
+  }, [scrlInfo.sr]);
 
   return(
-    <div className="welcome">
+    <div id="welcome" className="welcome">
       <div id="text" className="welcome-text">
         <h3>What happened on that day</h3>
         <h4>in the past?</h4>

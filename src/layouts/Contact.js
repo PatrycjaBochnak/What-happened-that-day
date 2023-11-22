@@ -3,16 +3,16 @@ import * as Icons from "react-bootstrap-icons";
 import "../styles/App.css";
 import "../styles/Contact.css";
 
-const Contact = ({ sr }) => {
+const Contact = ({ scrlInfo }) => {
   useEffect(() => {
-    sr.reveal("#text");
-    sr.reveal("#content", { delay: 1400 });
-  }, [sr]);
+    scrlInfo.sr.reveal("#contact #text");
+    scrlInfo.sr.reveal("#contact #content", {delay: scrlInfo.delay-600, origin: 'bottom'});
+  }, []);
 
   return (
     <>
-      <div className="contact">
-        <div id="text" className="contact-text">Hit me up!</div>
+      <div id="contact" className="contact">
+        <div id="text" className="contact-text prevent-select">Hit me up!</div>
 
         <div id="content" className="social-media-icons">
           <div className="ig">

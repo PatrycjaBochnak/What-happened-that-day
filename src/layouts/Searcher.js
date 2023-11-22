@@ -45,7 +45,7 @@ function Searcher() {
         for (const event of events) {
           if (event.year > 2000) {
             const formattedEvent = (
-              <div className="event-border">
+              <div className="event-border" key={event.year}>
               <div key={event.pageid} className="event">
                 <div className="event-content">
                   <p>{event.text}</p>
@@ -72,8 +72,14 @@ function Searcher() {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <table className="results-table">
-          <tbody>{historicalEvents}</tbody>
+        <table className="results-table permit-select">
+          <tbody>
+            <tr>
+              <td>
+                {historicalEvents}
+              </td>
+            </tr>
+          </tbody>
         </table>
       )}
     </div>

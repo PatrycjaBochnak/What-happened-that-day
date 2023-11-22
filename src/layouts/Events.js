@@ -3,16 +3,16 @@ import "../styles/App.css";
 import "../styles/Events.css";
 import Searcher from "./Searcher";
 
-const Events = ({ sr }) => {
+const Events = ({ scrlInfo }) => {
   // const [currentDate, setCurrentDate] = useState(null);
 
   useEffect(() => {
-    sr.reveal("#text");
-    sr.reveal("#content", { delay: 1400 });
+    scrlInfo.sr.reveal("#events #text");
+    scrlInfo.sr.reveal("#events #content", {delay: scrlInfo.delay+400, origin: 'bottom'});
 
     // const date = new Date();
     // setCurrentDate(date);
-  }, [sr]);
+  }, []);
 
   // if (!currentDate) {
   //   return null;
@@ -24,7 +24,7 @@ const Events = ({ sr }) => {
 
   return (
     <>
-      <div className="events">
+      <div id="events" className="events">
         <h5 id="text" className="events-text">Events from the past</h5>
         <div id="content" className="events-content">
           <Searcher />

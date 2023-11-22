@@ -4,7 +4,7 @@ import "../styles/Footer.css";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="footer">
+    <footer className="footer prevent-select">
       <div className="copyright">
         &copy; {currentYear} Patrycja Bochnak. All right reserved.
       </div>

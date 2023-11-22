@@ -3,7 +3,7 @@ import ButtonsMenu from "./ButtonsMenu";
 import "../styles/Nav.css";
 
 const Nav = () => (
-  <div className="navbar">
+  <div className="navbar prevent-select">
     <a href="/"><div className="logo-text">PAST EVENTS.COM</div></a>
     <div className="nav-items">
       <ButtonsMenu source="welcome" linkName="Start" />
