@@ -1,5 +1,5 @@
 <h1 align="center">
-  What Happened on That Day? 🕰️
+  What Happened on That Day in the Past? 🕰️
 </h1>
 
 What Happened on That Day is a simple application that provides you to check historicial events from the past.
