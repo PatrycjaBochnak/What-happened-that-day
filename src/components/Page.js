@@ -5,10 +5,7 @@ import Contact from "./Contact";
 import { Welcome } from "./Welcome";
 
 const Pages = ({ sr }) => {
-  useEffect(() => {
-    // sr.reveal(".page-text", { delay: 200, origin: "top" });
-    // sr.reveal(".page-img", { delay: 450, origin: "top" });
-  }, [sr]);
+  useEffect(() => {}, [sr]);
 
   return (
     <>

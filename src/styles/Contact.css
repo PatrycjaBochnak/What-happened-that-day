@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height:100vh;
+  min-height: 100vh;
 }
 .social-media-icons {
   text-decoration: none;
@@ -15,7 +15,6 @@
   width: 100%;
   font-size: 40px;
   margin-top: 150px;
-  /* margin-bottom: 300px; */
 }
 .ig {
   position: relative;

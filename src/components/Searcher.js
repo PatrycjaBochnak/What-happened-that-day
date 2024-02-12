@@ -15,8 +15,7 @@ function Searcher() {
 
   async function fetchHistoricalEvent(day, month) {
     const monthIndex = month - 1;
-    const wikiEndpoint =
-      `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/events/${monthIndex}/${day}`;
+    const wikiEndpoint = `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/events/${monthIndex}/${day}`;
     const wikiConfig = {
       timeout: 6500,
     };
@@ -46,11 +45,11 @@ function Searcher() {
           if (event.year > 2000) {
             const formattedEvent = (
               <div className="event-border">
-              <div key={event.pageid} className="event">
-                <div className="event-content">
-                  <p>{event.text}</p>
+                <div key={event.pageid} className="event">
+                  <div className="event-content">
+                    <p>{event.text}</p>
+                  </div>
                 </div>
-              </div>
               </div>
             );
 
