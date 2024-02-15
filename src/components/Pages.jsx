@@ -9,7 +9,7 @@ const Pages = ({ sr }) => {
 
   return (
     <>
-      <Welcome id="welcoem" sr={sr} />
+      <Welcome id="welcome" sr={sr} />
       <Events id="events" sr={sr} />
       <Contact id="contact" sr={sr} />
     </>

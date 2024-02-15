@@ -2,7 +2,7 @@ import Nav from "../layouts/Nav";
 import Footer from "../layouts/Footer";
 
 export const Layout = ({ children }) => {
-  return (
+  return ( 
     <div className="App">
       <Nav />
 
