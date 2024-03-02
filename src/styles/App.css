@@ -32,8 +32,6 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  /* height: 100%; */
-  /* margin-bottom: 200px; */
 }
 .page-text {
   width: 40%;
@@ -44,7 +42,6 @@ body {
   font-size: 40px;
   font-weight: 600;
   color: white;
-  /* margin-top: 200px; */
 }
 .page-text h4 {
   font-family: "Sriracha";
