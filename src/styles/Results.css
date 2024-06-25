@@ -1,28 +1,65 @@
-.results-title {
+.results {
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.results-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
 }
 
 .results-table {
-  margin: 30px 220px 30px 220px;
-  border: 7px double black;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.results-list {
-  font-family: "Poppins", sans-serif;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
+.results-table th,
+.results-table td {
+  padding: 1rem;
+  text-align: left;
+  font-size: 1rem;
+  color: #555;
 }
-.event {
-  display: flex;
-  margin: 0 100px 0 100px;
-  word-wrap: break-word;
-  list-style-type: disc;
-  border: 7px solid rgba(255, 255, 255, 0);
+
+.results-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
 }
-.event-content {
-  font-size: 14px;
-  font-family: "Poppins", sans-serif;
+
+.results-table tbody {
+  display: block;
+  overflow-y: auto;
+  max-height: 60vh; /* Dostosuj wysokość do potrzeb */
+}
+
+.results-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.results-table td {
+  border-bottom: 1px solid #ddd;
+}
+
+.loading {
+  font-size: 1.2rem;
+  color: #777;
+}
+
+@media screen and (max-width: 768px) {
+  .results-table th,
+  .results-table td {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
 }

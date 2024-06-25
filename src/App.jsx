@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/App.css";
-import { Layout } from "./Layout";
-import Pages from "./Pages";
+import "./styles/App.css";
+import { Layout } from "./layouts/Layout";
+import Pages from "./pages/Pages";
 
 function App({ sr }) {
   return (
