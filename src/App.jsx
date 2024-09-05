@@ -1,11 +1,11 @@
 import React from "react";
-import "./styles/App.css";
 import { Layout } from "./layouts/Layout";
 import Pages from "./pages/Pages";
+import "./index.css";
 
 function App({ sr }) {
   return (
-    <div className="App">
+    <div className="relative flex min-h-screen flex-col justify-center overflow-hidden py-6 sm:py-12">
       <Layout>
         <Pages sr={sr} />
       </Layout>

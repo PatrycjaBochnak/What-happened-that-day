@@ -1,4 +1,3 @@
-import "../styles/Welcome.css";
 import React, { useEffect } from "react";
 
 export const Welcome = ({ sr }) => {

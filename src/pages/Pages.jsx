@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "../styles/App.css";
 import Events from "./Events";
 import Contact from "./Contact";
 import { Welcome } from "./Welcome";

@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import * as Icons from "react-bootstrap-icons";
-import "../styles/App.css";
-import "../styles/Contact.css";
 
 const Contact = ({ sr }) => {
   useEffect(() => {

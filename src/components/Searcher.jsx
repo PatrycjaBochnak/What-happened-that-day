@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../styles/App.css";
-import "../styles/Results.css";
 
 function Searcher() {
   const currentDate = new Date();

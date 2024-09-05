@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../styles/App.css";
-import "../styles/Events.css";
 import Searcher from "../components/Searcher";
 
 const Events = ({ sr }) => {
