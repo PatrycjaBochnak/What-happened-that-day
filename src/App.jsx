@@ -5,7 +5,7 @@ import "./index.css";
 
 function App({ sr }) {
   return (
-    <div className="relative flex min-h-screen flex-col justify-center overflow-hidden py-6 sm:py-12">
+    <div className="min-h-screen bg-gray-100 text-gray-800">
       <Layout>
         <Pages sr={sr} />
       </Layout>
