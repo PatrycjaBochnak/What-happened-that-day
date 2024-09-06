@@ -1,77 +1,40 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import fetchHistoricalEvent from "../utils/wikiApi";
+import Calendar from "./Calendar";
 
 function Searcher() {
   const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth();
+  const [yearFromCalendar, setYearFromCalendar] = useState(currentYear);
+  const [monthFromCalendar, setMonthFromCalendar] = useState(currentMonth);
   const [historicalEvents, setHistoricalEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  async function getJsonResponse(url, config) {
-    const res = await axios.get(url, config);
-    return res.data;
-  }
-
-  async function fetchHistoricalEvent(day, month) {
-    const monthIndex = month - 1;
-    const wikiEndpoint = `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/events/${monthIndex}/${day}`;
-    const wikiConfig = {
-      timeout: 6500,
-    };
-
-    try {
-      const result = await getJsonResponse(wikiEndpoint, wikiConfig);
-      console.log(result);
-      return result;
-    } catch (error) {
-      console.log("Error: " + error);
-      return null;
-    }
-  }
-
   useEffect(() => {
     async function getHistoricalEvents() {
-      const day = currentDate.getDate();
-      const month = currentDate.getMonth() + 1;
-
+      console.log(monthFromCalendar)
       const eventsToAdd = [];
-
-      const wikiData = await fetchHistoricalEvent(day, month);
-      if (wikiData && wikiData.events) {
-        const events = wikiData.events;
-
-        for (const event of events) {
-          if (event.year > 2000) {
-            const formattedEvent = (
-              <div className="event-border">
-                <div key={event.pageid} className="event">
-                  <div className="event-content">
-                    <p>{event.text}</p>
-                  </div>
-                </div>
-              </div>
-            );
-
-            eventsToAdd.push(formattedEvent);
-          }
-        }
-      }
+      const wikiData = await fetchHistoricalEvent(yearFromCalendar);
       setHistoricalEvents(eventsToAdd);
       setIsLoading(false);
     }
 
     getHistoricalEvents();
   }, []);
+
   return (
-    <div>
-      <div className="results-title">
-        <h5>Historical Events from {currentDate.toDateString()}</h5>
-      </div>
+    <div className="p-6 bg-blue-100 rounded-lg shadow-md">
       {isLoading ? (
-        <p>Loading...</p>
+        <p className="text-center text-gray-600">Loading...</p>
       ) : (
-        <table className="results-table">
-          <tbody>{historicalEvents}</tbody>
-        </table>
+        <div>
+          <Calendar
+            setYearFromCalendar = {setYearFromCalendar}
+            setMonthFromCalendar = {setMonthFromCalendar}
+            currentDate = {currentDate}
+          />
+        </div>
       )}
     </div>
   );

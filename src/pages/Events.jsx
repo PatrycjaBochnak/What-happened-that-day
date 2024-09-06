@@ -1,22 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Searcher from "../components/Searcher";
 
 const Events = ({ sr }) => {
   useEffect(() => {
-    sr.reveal("#text");
-    sr.reveal("#content", { delay: 1400 });
+    sr.reveal("#text", { origin: "top" });
+    sr.reveal("#content", { delay: 1400, origin: "bottom" });
   }, [sr]);
+
   return (
-    <>
-      <div className="events">
-        <h5 id="text" className="events-text">
-          Events from the past
-        </h5>
-        <div id="content" className="events-content">
-          <Searcher />
-        </div>
+    <div
+      id="events"
+      className="min-h-screen bg-blue-200 flex flex-col items-center justify-center px-4"
+    >
+      <h5 id="text" className="text-3xl mt-24 font-bold text-gray-800 mb-4">
+        Events from the past
+      </h5>
+      <div
+        id="content"
+        className="w-full max-w-2xl bg-white p-6 rounded-lg shadow-lg"
+      >
+        <Searcher />
       </div>
-    </>
+    </div>
   );
 };
 

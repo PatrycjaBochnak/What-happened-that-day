@@ -1,14 +1,19 @@
-import Nav from "../components/Nav"
+import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
 export const Layout = ({ children }) => {
-  return ( 
-    <div>
-      <Nav />
-    <div className="pt-16">
-      {children}
+  return (
+    <>
+      {/* Fixed navbar */}
+      <div className="fixed w-full z-50">
+        <Nav />
       </div>
+
+      {/* Main content with padding */}
+      <div className="pt-20">{children}</div>
+
+      {/* Footer */}
       <Footer />
-    </div>
+    </>
   );
 };

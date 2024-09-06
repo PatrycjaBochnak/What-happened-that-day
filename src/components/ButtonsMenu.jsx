@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 
 const ButtonsMenu = ({ source, linkName }) => (
   <Link
-    className="button"
+    className="cursor-pointer text-white hover:text-gray-400"
     activeClass="active"
     to={source}
     spy={true}
