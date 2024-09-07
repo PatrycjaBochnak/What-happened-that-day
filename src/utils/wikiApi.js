@@ -13,11 +13,12 @@ const fetchHistoricalEvent = async (year) => {
 
   try {
     const result = await getJsonResponse(wikiEndpoint);
-    return result;
+    return result ? result.split('. ').slice(0, 5) : [];
   } catch (error) {
-    console.log("Error: " + error);
-    return null;
+    console.log("Error fetching historical event: " + error);
+    return [];
   }
 };
+
 
 export default fetchHistoricalEvent;

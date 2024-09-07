@@ -13,15 +13,17 @@ function Searcher() {
 
   useEffect(() => {
     async function getHistoricalEvents() {
-      console.log(monthFromCalendar)
-      const eventsToAdd = [];
+      setIsLoading(true);
       const wikiData = await fetchHistoricalEvent(yearFromCalendar);
-      setHistoricalEvents(eventsToAdd);
+      if (wikiData) {
+        setHistoricalEvents(wikiData);
+      }
       setIsLoading(false);
     }
 
     getHistoricalEvents();
-  }, []);
+    console.log(getHistoricalEvents)
+  }, [yearFromCalendar, monthFromCalendar]);
 
   return (
     <div className="p-6 bg-blue-100 rounded-lg shadow-md">
