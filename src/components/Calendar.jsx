@@ -7,7 +7,15 @@ import { PickersDay } from "@mui/x-date-pickers/PickersDay";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { DayCalendarSkeleton } from "@mui/x-date-pickers/DayCalendarSkeleton";
 
-const Calendar = ({setYearFromCalendar, setMonthFromCalendar, currentDate}) => {
+const Calendar = ({
+  setYearFromCalendar,
+  setMonthFromCalendar,
+  currentDate,
+  highlightedDays,
+}) => {
+  const isSelected =
+    !outsideCurrentMonth && highlightedDays.includes(day.date());
+
   function getRandomNumber(min, max) {
     return Math.round(Math.random() * (max - min) + min);
   }
@@ -83,7 +91,7 @@ const Calendar = ({setYearFromCalendar, setMonthFromCalendar, currentDate}) => {
   }, []);
 
   const handleMonthChange = (date) => {
-    console.log(date)
+    console.log(date);
     const rightMonth = date.$M + 1;
     console.log("date:", date);
     console.log("date.$M:", date.$M);
