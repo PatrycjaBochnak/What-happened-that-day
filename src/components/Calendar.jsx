@@ -7,25 +7,14 @@ import { PickersDay } from "@mui/x-date-pickers/PickersDay";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { DayCalendarSkeleton } from "@mui/x-date-pickers/DayCalendarSkeleton";
 
-const Calendar = ({
-  setYearFromCalendar,
-  setMonthFromCalendar,
-  currentDate,
-  highlightedDays,
-}) => {
-  const isSelected =
-    !outsideCurrentMonth && highlightedDays.includes(day.date());
-
-  function getRandomNumber(min, max) {
-    return Math.round(Math.random() * (max - min) + min);
-  }
+const Calendar = ({ setYearFromCalendar, setMonthFromCalendar, currentDate }) => {
 
   function fakeFetch(date, { signal }) {
     return new Promise((resolve, reject) => {
       const timeout = setTimeout(() => {
         const daysInMonth = date.daysInMonth();
-        const daysToHighlight = [1, 2, 3].map(() =>
-          getRandomNumber(1, daysInMonth)
+        const daysToHighlight = Array.from({ length: 3 }, () =>
+          (1, daysInMonth)
         );
 
         resolve({ daysToHighlight });
@@ -38,47 +27,39 @@ const Calendar = ({
     });
   }
 
-  const initialValue = dayjs(`${currentDate}`);
+  const initialValue = dayjs(currentDate);
+  const requestAbortController = React.useRef(null);
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [highlightedDays, setHighlightedDays] = React.useState([1, 2, 15]);
 
   function ServerDay(props) {
     const { highlightedDays = [], day, outsideCurrentMonth, ...other } = props;
 
     const isSelected =
-      !props.outsideCurrentMonth &&
-      highlightedDays.indexOf(props.day.date()) >= 0;
+      !outsideCurrentMonth && highlightedDays.includes(day.date());
 
     return (
       <Badge
-        key={props.day.toString()}
+        key={day.toString()}
         overlap="circular"
         badgeContent={isSelected ? "⭐️" : undefined}
       >
-        <PickersDay
-          {...other}
-          outsideCurrentMonth={outsideCurrentMonth}
-          day={day}
-        />
+        <PickersDay {...other} outsideCurrentMonth={outsideCurrentMonth} day={day} />
       </Badge>
     );
   }
 
-  const requestAbortController = React.useRef(null);
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [highlightedDays, setHighlightedDays] = React.useState([1, 2, 15]);
-
   const fetchHighlightedDays = (date) => {
     const controller = new AbortController();
-    fakeFetch(date, {
-      signal: controller.signal,
-    })
+
+    fakeFetch(date, { signal: controller.signal })
       .then(({ daysToHighlight }) => {
         setHighlightedDays(daysToHighlight);
         setIsLoading(false);
       })
       .catch((error) => {
-        // ignore the error if it's caused by `controller.abort`
         if (error.name !== "AbortError") {
-          throw error;
+          console.error("Fetch error:", error);
         }
       });
 
@@ -91,12 +72,9 @@ const Calendar = ({
   }, []);
 
   const handleMonthChange = (date) => {
-    console.log(date);
-    const rightMonth = date.$M + 1;
-    console.log("date:", date);
-    console.log("date.$M:", date.$M);
-    console.log("rightMonth:", rightMonth);
+    const rightMonth = date.month() + 1; 
     setMonthFromCalendar(rightMonth);
+
     if (requestAbortController.current) {
       requestAbortController.current.abort();
     }
@@ -106,8 +84,8 @@ const Calendar = ({
     fetchHighlightedDays(date);
   };
 
-  const handleYearChange = (e) => {
-    setYearFromCalendar(e.$y);
+  const handleYearChange = (date) => {
+    setYearFromCalendar(date.year());
   };
 
   return (
