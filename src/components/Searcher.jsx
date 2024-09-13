@@ -86,10 +86,11 @@ function Searcher() {
       if (doc.querySelectorAll("ul")) {
       } else {
       }
+      console.log(getTopLevelListItems(doc))
       // arrTemp.push(li.textContent.replace(/<[^>]*>/g, ''));
-      console.log(eventsPerDay);
     });
   }
+
 
   // Funkcja do przetwarzania HTML i wyodrębniania wydarzeń
   function extractEventsFromHTML(htmlString) {
