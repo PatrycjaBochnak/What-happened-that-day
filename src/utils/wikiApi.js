@@ -6,7 +6,7 @@ const getJsonResponse = async (url) => {
   return await res.json();
 };
 
-const getHistoricalEventsForMonth = async (month) => {
+export const getHistoricalEventsForMonth = async (month) => {
   const eventsPerDay = {};
 
   for (let day = 1; day <= 31; day++) {
@@ -14,21 +14,18 @@ const getHistoricalEventsForMonth = async (month) => {
       const apiUrl = `https://history.muffinlabs.com/date/${month}/${day}`;
       const data = await getJsonResponse(apiUrl);
 
-      if (data && data.data.Events.length > 0) {
+      if (data && data.data.Events && data.data.Events.length > 0) {
         eventsPerDay[day] = data.data.Events.map(event => ({
           date: event.year,
           text: event.text
         }));
+      } else {
+        eventsPerDay[day] = [];
       }
     } catch (error) {
-      console.error(`Error fetching events for ${month}/${day}:`, error);
+      console.error(`Error fetching events for ${month}/${day}:`, error.message);
     }
   }
 
   return eventsPerDay;
 };
-
-
-getHistoricalEventsForMonth(10).then(events => {
-  console.log(events);
-});
