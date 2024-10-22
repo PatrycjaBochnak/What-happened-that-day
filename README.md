@@ -16,8 +16,7 @@ To get a local copy up and running, follow these simple steps:
 ### Installation
 
 1. Clone the repository:
-   
-bash
+   ```bash
    git clone https://github.com/PatrycjaBochnak/what-happened-that-day.git
 
 ## 📝 Key Features
