@@ -2,11 +2,13 @@ import * as React from "react";
 import dayjs from "dayjs";
 import Badge from "@mui/material/Badge";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { PickersDay } from "@mui/x-date-pickers/PickersDay";
-import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
-import { DayCalendarSkeleton } from "@mui/x-date-pickers/DayCalendarSkeleton";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { PickersDay } from "@mui/x-date-pickers";
+import { DateCalendar } from "@mui/x-date-pickers";
+import { DayCalendarSkeleton } from "@mui/x-date-pickers";
 import { getHistoricalEventsForMonth } from "../utils/wikiApi"; 
+import Modal from "@mui/material/Modal"; // Importowanie komponentu Modal
+import Box from "@mui/material/Box"; // Importowanie komponentu Box
 
 const Calendar = ({ setYearFromCalendar, setMonthFromCalendar, currentDate }) => {
   const initialValue = dayjs(currentDate);
@@ -14,6 +16,8 @@ const Calendar = ({ setYearFromCalendar, setMonthFromCalendar, currentDate }) =>
   const [isLoading, setIsLoading] = React.useState(false);
   const [highlightedDays, setHighlightedDays] = React.useState([]);
   const [eventsForDays, setEventsForDays] = React.useState({});
+  const [selectedDayEvents, setSelectedDayEvents] = React.useState(null); 
+  const [openModal, setOpenModal] = React.useState(false); // Stan do zarządzania otwarciem modalu
 
   function ServerDay(props) {
     const { highlightedDays = [], day, outsideCurrentMonth, ...other } = props;
@@ -24,7 +28,12 @@ const Calendar = ({ setYearFromCalendar, setMonthFromCalendar, currentDate }) =>
     const handleClick = () => {
       const dayEvents = eventsForDays[day.date()];
       if (dayEvents) {
-        console.log(`Events for ${day.date()} day :`, dayEvents);
+        setSelectedDayEvents({
+          day: day.date(),
+          events: dayEvents,
+        });
+        setOpenModal(true); // Otwórz modal po kliknięciu
+        console.log(`Events for ${day.date()} day:`, dayEvents);
       }
     };
 
@@ -79,24 +88,67 @@ const Calendar = ({ setYearFromCalendar, setMonthFromCalendar, currentDate }) =>
     setYearFromCalendar(date.year());
   };
 
+  // Funkcja do zamykania modalu
+  const handleCloseModal = () => {
+    setOpenModal(false);
+    setSelectedDayEvents(null); // Resetuj wybrane wydarzenia
+  };
+
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DateCalendar
-        defaultValue={initialValue}
-        loading={isLoading}
-        onMonthChange={handleMonthChange}
-        onYearChange={handleYearChange}
-        renderLoading={() => <DayCalendarSkeleton />}
-        slots={{
-          day: ServerDay,
-        }}
-        slotProps={{
-          day: {
-            highlightedDays,
-          },
-        }}
-      />
-    </LocalizationProvider>
+    <div>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DateCalendar
+          defaultValue={initialValue}
+          loading={isLoading}
+          onMonthChange={handleMonthChange}
+          onYearChange={handleYearChange}
+          renderLoading={() => <DayCalendarSkeleton />}
+          slots={{
+            day: ServerDay,
+          }}
+          slotProps={{
+            day: {
+              highlightedDays,
+            },
+          }}
+        />
+      </LocalizationProvider>
+
+      {/* Modal do wyświetlania wydarzeń */}
+      <Modal
+        open={openModal}
+        onClose={handleCloseModal}
+        aria-labelledby="modal-title"
+        aria-describedby="modal-description"
+      >
+        <Box
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            height: 600,
+            overflowY: 'auto',
+            width: 400,
+            bgcolor: 'background.paper',
+            boxShadow: 24,
+            p: 4,
+            borderRadius: 2,
+          }}
+        >
+          <h2 id="modal-title" className="text-xl font-bold">
+            Events for {selectedDayEvents ? selectedDayEvents.day : ''} day:
+          </h2>
+          <ul id="modal-description" className="list-disc pl-6 mt-2">
+            {selectedDayEvents && selectedDayEvents.events.map((event, index) => (
+              <li key={index}>
+                <strong>{event.date}:</strong> {event.text}
+              </li>
+            ))}
+          </ul>
+        </Box>
+      </Modal>
+    </div>
   );
 };
 
