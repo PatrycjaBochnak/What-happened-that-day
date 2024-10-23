@@ -32,8 +32,16 @@ You can find a live demo of this project here. The application is deployed using
 ## Technologies Used 🛠️
 
 - React 
-- Tailwind CSS 
-- External APIs (Wiki API)
+- React Router
+- Tailwind CSS
+- Material-UI (MUI)
+- Day.js
+- Async/Await
+- External APIs (MiffinLabs)
+- Error Handling
+- State Management (useState, useEffect)
+- Conditional Rendering
+- CSS
 
 ## Screenshots 📸 
 
