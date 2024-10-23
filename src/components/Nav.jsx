@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ButtonsMenu from "./ButtonsMenu";
+import logo from "../assets/logo.jpg";
 
 const Nav = () => {
   const [isClick, setIsClick] = useState(false);
@@ -15,7 +16,7 @@ const Nav = () => {
         {/* Logo */}
         <a href="/" className="flex items-center space-x-3">
           <img
-            src="https://toppng.com/uploads/preview/calendar-vector-icon-vector-calendar-icon-115629682028kybzmvoe5.png"
+             src={logo}
             className="h-8"
             alt="PAST EVENTS Logo"
           />
@@ -67,7 +68,7 @@ const Nav = () => {
           }`}
           id="navbar-cta"
         >
-          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-700 rounded-lg md:space-x-8 md:flex-row md:mt-0 md:border-0 bg-[#0c1c35] shadow-lg">
+          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-700 rounded-lg md:space-x-8 md:flex-row md:mt-0 md:border-0 bg-[#0c1c35]">
             <li>
               <ButtonsMenu
                 source="welcome"
