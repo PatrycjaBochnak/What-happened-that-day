@@ -100,7 +100,7 @@ const Calendar = ({
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center">
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DateCalendar
           defaultValue={initialValue}
@@ -117,10 +117,9 @@ const Calendar = ({
             },
           }}
           style={{
-            width: "400px",
-            height: "500px",
             color: "black"
           }}
+          className="w-[90%] sm:w-[300px] lg:w-[500px] xl:w-[600px] h-auto"
         />
       </LocalizationProvider>
 
