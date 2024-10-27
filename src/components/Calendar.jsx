@@ -143,6 +143,7 @@ const Calendar = ({
             p: 4,
             borderRadius: 2,
           }}
+          className="w-[90%] sm:w-[400px] md:w-[500px] lg:w-[600px] max-h-[80vh]"
         >
           <IconButton
             aria-label="close"
@@ -156,7 +157,7 @@ const Calendar = ({
             <CloseIcon />
           </IconButton>
 
-          <h2 id="modal-title" className="text-xl font-bold">
+          <h2 id="modal-title" className="text-xl sm:text-xl font-bold">
             Events for{" "}
             {selectedDayEvents
               ? dayjs().set("date", selectedDayEvents.day).format("D MMMM")
@@ -164,7 +165,7 @@ const Calendar = ({
             :
           </h2>
 
-          <ul id="modal-description" className="list-disc pl-6 mt-2">
+          <ul id="modal-description" className="list-disc pl-6 mt-2 text-sm sm:text-base">
             {selectedDayEvents &&
               selectedDayEvents.events.map((event, index) => (
                 <li key={index}>
