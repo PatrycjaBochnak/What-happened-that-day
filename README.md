@@ -44,10 +44,13 @@ You can find a live demo of this project here. The application is deployed using
 - CSS
 
 ## Screenshots 📸 
-<img width="1439" alt="Screenshot 2024-10-28 at 21 33 14" src="https://github.com/user-attachments/assets/38f284aa-bf4a-4f7f-ba44-3957c959e995">
-
-<img width="1439" alt="Screenshot 2024-10-28 at 21 33 03" src="https://github.com/user-attachments/assets/cbb4ddb1-8955-419e-9881-9790c9e738e8">
-
-<img width="1439" alt="Screenshot 2024-10-28 at 21 3<img width="1437" alt="Screenshot 2024-10-28 at 21 33 33" src="https://github.com/user-attachments/assets/feddc2af-d0a9-4605-be3a-394bf68d1465">
-
-3 22" src="https://github.com/user-attachments/assets/d94b2514-1acd-4ffa-a0f6-60554c855ba8">
+### Main menu
+<img width="1439" alt="Screenshot 2024-10-28 at 21 33 03" src="https://github.com/user-attachments/assets/9f156689-3613-4e9a-b365-266013f93499">
+### Events calendar
+<img width="1439" alt="Screenshot 2024-10-28 at 21 33 14" src="https://github.com/user-attachments/assets/4b6ff061-de3c-4a16-9d0d-c8ad69879f73">
+</>
+<img width="1435" alt="Screenshot 2024-10-28 at 21 35 53" src="https://github.com/user-attachments/assets/7541505a-b50a-44c9-ae39-030576384796">
+### Contact
+<img width="1439" alt="Screenshot 2024-10-28 at 21 33 22" src="https://github.com/user-attachments/assets/6c62846e-1c3d-4388-a6e0-c1b2abcd110d">
+### Message page
+<img width="1437" alt="Screenshot 2024-10-28 at 21 33 33" src="https://github.com/user-attachments/assets/92857d5e-0695-48d5-9648-b4aa488a6d5c">
