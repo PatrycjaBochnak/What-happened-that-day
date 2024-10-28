@@ -44,6 +44,7 @@ You can find a live demo of this project here. The application is deployed using
 - Conditional Rendering
 - Iterative Data Fetching
 - Structured Data Mapping
+- Media queries
 
 ## Screenshots 📸 
 ### Main menu
