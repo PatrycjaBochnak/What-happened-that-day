@@ -23,7 +23,7 @@ To get a local copy up and running, follow these simple steps:
 
 - Automatic Date Retrieval: The application fetches today's date from your local computer.
 - Historical Events: Events are retrieved from the Wiki API.
-- Random Events Display: The user can view 7 random historical events from the past.
+- Events Display: The user can click at the day in typed month and year to show events from past years in chosen month and day. 
 
 ## Deployment 🚀
 
