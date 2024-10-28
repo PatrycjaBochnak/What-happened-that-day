@@ -34,14 +34,16 @@ You can find a live demo of this project here. The application is deployed using
 - React 
 - React Router
 - Tailwind CSS
+- CSS
 - Material-UI (MUI)
 - Day.js
 - Async/Await
-- External APIs (MiffinLabs)
+- External APIs (MuffinLabs)
 - Error Handling
 - State Management (useState, useEffect)
 - Conditional Rendering
-- CSS
+- Iterative Data Fetching
+- Structured Data Mapping
 
 ## Screenshots 📸 
 ### Main menu
