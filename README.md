@@ -31,6 +31,7 @@ You can find a live demo of this project here. The application is deployed using
 
 ## Technologies Used 🛠️
 
+- JavaScript
 - React 
 - React Router
 - Tailwind CSS
