@@ -36,6 +36,8 @@ You can find a live demo of this project here. The application is deployed using
 - React Router
 - Tailwind CSS
 - CSS
+- REST API
+- Fetch API
 - Material-UI (MUI)
 - Day.js
 - Async/Await
